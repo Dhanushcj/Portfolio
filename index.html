@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 ">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-  w-full ">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold">MyPortfolio</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#about" class="hover:text-blue-500">About</a></li>
+        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="flex items-center justify-center bg-blue-500 text-white">
+    <div class="text-center">
+      <h2 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Dhanush Chakravarthy</h2>
+      <p class="text-lg md:text-xl">Junior Developer</p>
+      <a href="#projects" class="mt-6 inline-block bg-white text-blue-500 px-6 py-2 rounded-lg font-semibold hover:bg-gray-200">
+        View Projects
+      </a>
+    </div>
+  </section>
+  <section>
+    <div class="flex  justify-center">
+      <img src="image/DHANUSH-JAYAKUMAR.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-black-500 mt-5">
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">My Projects</h2>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Project Card -->
+      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Project 1</h3>
+        <p class="text-gray-600 mb-4">Testing of Web Application using Selenium.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Project 2</h3>
+        <p class="text-gray-600 mb-4">Creating a Portfolio Using Tailwind CSS.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Project 3</h3>
+        <p class="text-gray-600 mb-4">Short description of your project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-white py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Certifications</h2>
+      <p class="text-gray-600">
+        <ul>
+          <li>AUTOMATION TESTING USING JAVA AND SELENIUM</li>
+        </ul>
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">Contact Me</h2>
+
+    <form class="bg-white p-6 rounded-xl shadow-md space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg">
+      <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg">
+      <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg"></textarea>
+      <button class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">
+        Send Message
+      </button>
+    </form>
+  </section>
+  <section class="mb-5">
+    <div class="flex justify-center">
+     <a href="https://facebook.com/"> <img src="image/facebook-logo-vector-icon-logotype-vector-eps_901408-408.avif" alt="" class="h-[30px] w-[40px] pr-5"></a>
+     <a href="https://www.instagram.com/"> <img src="image/OIP (1).webp" alt="" class="w-[40px] h-[30px]"></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>© 2026 Dhanush Chakravarthy. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
