@@ -1,74 +1,73 @@
 <!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/src/style.css" rel="stylesheet">
-         <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="p-10">
-    <section class="bg-purple-100 rounded-2xl mb-10">
-        <div class="container mx-auto my-auto">
-            <div class="flex">
-                <a class="font-bold text-gray-800 pr-5  border-r mr-5 border-purple-300 mt-2" href="other.html">Portfolio</a>
-                <div class="border border-black my-auto">
-                    <button class="hidden">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Portfolio</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="src/style.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-5 md:p-10">
 
-                    </button>
-                </div>
-                <div class="flex">
-                    <a class="p-5 px-3 py-2 border rounded-xl border-purple-100 hover:border-purple-300" href="">Home</a>
-                    <a class="p-5 px-3 py-2 border rounded-xl border-purple-100 hover:border-purple-300" href="#eqq">About</a>
-                    <a class="p-5 px-3 py-2 border rounded-xl border-purple-100 hover:border-purple-300" href="">Contact</a>
-                </div>
-                <a href="image/Dhanush_Chakravarthy_Resume.pdf" class="font-bold bg-red-500 px-3 py-3 rounded-xl ml-auto mt-2">Get my resume</a>
-            </div>
-            <div class="flex py-35 font-bold">
-                <div class="w-1/2 text-center py-16">
-                        <h2 class="text-6xl"> Welcome !!!</h2>
-                        <p class="mt-2">Entry-level Web Developer with hands-on experience creating dynamic, responsive websites through academic projects and personal initiatives. Proficient in front-end technologies and familiar with back-end fundamentals, with a keen eye for UI/UX best practices. Committed to writing clean, maintainable code and continuously improving through feedback and emerging industry trends.</p>
-                </div>
-                <div class="1/2 ml-auto py-10">
-                    <img src="image/laptop.jpg" class="rounded-2xl" alt="no image">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="eqq" class=" bg-blue-300 mb-10 rounded-2xl p-5">
-        <div class="container mx-auto my-auto">
-            <div>
-                <h3 class="text-3xl underline font-bold id=about">Educational Qualifications</h3>
-            </div>
-        </div>
-        </section>
-    <section class="bg-gray-100 p-5">
-        <div class="flex">
-            <div class="w-1/4">
-               <p class="bg-white shadow-lg mr-2 py-10 text-center rounded-2xl">Msc., Mathematcis<br>
-               Govt Arts and Science Colloge Krishnagiri<br>
-               2020-2022</p>
-            </div>
-            <div class="w-1/4">
-                <p class="bg-white shadow-lg mr-2 py-10 text-center rounded-2xl">
-               Bsc Mathematcis<br> Arignar Anna Arts and Science Collage <br> 2017-2020
-                </p>
-            </div>
-            <div class="w-1/4">
-                <p class="bg-white shadow-lg mr-2 py-10 text-center rounded-2xl">
-                HSC <br> Govt Boys Hr Sec School Krishnagiri <br> 2016-2017
-                </p>
-            </div>
-           <div class="w-1/4">
-            <p class="bg-white shadow-lg mr-2 py-10 text-center rounded-2xl">
-                SSLC<br> Govt Boys Hr Sec School Krishnagiri <br> 2014-2015
-            </p>
-            </div>
-        </div>
-    </section>
-        <script src="" async defer></script>
-    </body>
+  <!-- Header / Navigation -->
+  <header class="bg-purple-100 rounded-2xl mb-8 p-5 md:p-8">
+    <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start">
+      <div class="flex items-center mb-4 md:mb-0 md:mr-8">
+        <a class="font-bold text-gray-800 pr-5 border-r mr-5 border-purple-300" href="index.html">Portfolio</a>
+        <!-- Optional button placeholder -->
+      </div>
+      <nav class="flex flex-wrap gap-3 md:gap-4 mb-4 md:mb-0">
+        <a class="px-3 py-2 border rounded-xl border-purple-100 hover:border-purple-300" href="index.html">Home</a>
+        <a class="px-3 py-2 border rounded-xl border-purple-100 hover:border-purple-300" href="#about">About</a>
+        <a class="px-3 py-2 border rounded-xl border-purple-100 hover:border-purple-300" href="#contact">Contact</a>
+      </nav>
+      <a href="image/Dhanush_Chakravarthy_Resume.pdf" target="_blank" class="font-bold bg-red-500 px-3 py-2 rounded-xl mt-2 md:mt-0 md:ml-auto">Get my resume</a>
+    </div>
+  </header>
+
+  <!-- Welcome Section -->
+  <section class="bg-purple-50 rounded-2xl mb-8 p-5 md:p-10">
+    <div class="container mx-auto flex flex-col md:flex-row items-center gap-6">
+      <div class="md:w-1/2 text-center md:text-left">
+        <h2 class="text-4xl md:text-6xl font-bold mb-4">Welcome !!!</h2>
+        <p class="text-sm md:text-base">
+          Entry-level Web Developer with hands-on experience creating dynamic, responsive websites through academic projects and personal initiatives. Proficient in front-end technologies and familiar with back-end fundamentals, with a keen eye for UI/UX best practices. Committed to writing clean, maintainable code and continuously improving through feedback and emerging industry trends.
+        </p>
+      </div>
+      <div class="md:w-1/2">
+        <img src="image/laptop.jpg" class="rounded-2xl w-full h-auto" alt="Laptop image">
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Education Section -->
+  <section id="about" class="bg-blue-200 mb-8 rounded-2xl p-5 md:p-10">
+    <h3 class="text-2xl md:text-3xl underline font-bold mb-6 text-center md:text-left">Educational Qualifications</h3>
+    <div class="flex flex-col md:flex-row gap-4 md:gap-4">
+      <div class="bg-white shadow-lg rounded-2xl py-6 text-center flex-1">
+        <p class="font-semibold">MSc., Mathematics<br>Govt Arts and Science College, Krishnagiri<br>2020-2022</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-2xl py-6 text-center flex-1">
+        <p class="font-semibold">BSc., Mathematics<br>Arignar Anna Arts and Science College<br>2017-2020</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-2xl py-6 text-center flex-1">
+        <p class="font-semibold">HSC<br>Govt Boys Hr Sec School, Krishnagiri<br>2016-2017</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-2xl py-6 text-center flex-1">
+        <p class="font-semibold">SSLC<br>Govt Boys Hr Sec School, Krishnagiri<br>2014-2015</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (Optional placeholder) -->
+  <section id="contact" class="bg-gray-100 p-5 md:p-10 rounded-2xl mb-8">
+    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-center">Contact Me</h3>
+    <!-- Add contact form or links here -->
+  </section>
+
+</body>
 </html>
