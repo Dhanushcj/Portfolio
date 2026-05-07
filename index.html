@@ -4,91 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="/src/style.css" rel="stylesheet">
 </head>
-
-<body class="bg-gray-100 text-gray-800 ">
+<body class="bg-gray-100 text-gray-800">
 
   <!-- Navbar -->
-  <nav class="bg-white shadow-  w-full ">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-      <h1 class="text-xl font-bold">MyPortfolio</h1>
-      <ul class="flex space-x-6">
-        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
-        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
-        <li><a href="#about" class="hover:text-blue-500">About</a></li>
-        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
-      </ul>
+  <nav class="bg-white shadow-sm border-b border-gray-200 w-full font-sans">
+    <div class="px-4 xl:px-6 h-[72px] flex items-center justify-between gap-4 w-full">
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0 flex items-center pt-1 pr-2">
+        <div class="relative font-extrabold text-[28px] tracking-tighter text-black">
+          <svg class="absolute -top-1.5 left-[4.5px] w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l-8 8h5v0h6v0h5l-8-8z" />
+          </svg>
+          udemy
+        </div>
+      </a>
+
+      <!-- Left nav links -->
+      <div class="hidden lg:flex items-center text-[14px] text-gray-600 gap-4 flex-shrink-0 whitespace-nowrap">
+        <a href="#" class="hover:text-purple-600 transition px-2">Find Courses</a>
+        <a href="#" class="hover:text-purple-600 transition px-2">Get Certified</a>
+        <a href="#" class="hover:text-purple-600 transition px-2">Subscribe</a>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="flex-grow min-w-[150px] max-w-[800px] px-2 md:px-4 hidden sm:flex items-center">
+        <div class="relative w-full border border-gray-400 rounded-full bg-gray-50 h-11 lg:h-12 flex items-center focus-within:border-gray-800 transition overflow-hidden">
+          <svg class="w-5 h-5 ml-4 mr-2 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <input type="text" placeholder="Search for anything" class="bg-transparent border-none outline-none w-full h-full text-black placeholder-gray-500 text-[14px] font-light">
+        </div>
+      </div>
+
+      <!-- Right Links -->
+      <div class="hidden xl:flex items-center text-[14px] text-gray-600 gap-4 flex-shrink-0 whitespace-nowrap">
+        <a href="#" class="hover:text-purple-600 transition px-2">Udemy Business</a>
+        <a href="#" class="hover:text-purple-600 transition px-2">Teach on Udemy</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3 flex-shrink-0">
+        <a href="#" class="text-gray-600 hover:text-purple-600 transition px-1 lg:px-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+        </a>
+        <div class="hidden md:flex items-center gap-2">
+          <a href="#" class="border border-purple-600 text-purple-600 font-bold text-[14px] h-10 px-5 flex items-center justify-center whitespace-nowrap hover:bg-purple-50 transition rounded-md bg-white">Log in</a>
+          <a href="#" class="bg-purple-600 text-white font-bold text-[14px] h-10 px-5 flex items-center justify-center whitespace-nowrap hover:bg-purple-700 transition rounded-md border border-purple-600">Sign up</a>
+          <a href="#" class="border border-purple-600 text-purple-600 h-10 w-10 flex items-center justify-center hover:bg-purple-50 transition rounded-md bg-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="flex items-center justify-center bg-blue-500 text-white">
-    <div class="text-center">
-      <h2 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Dhanush Chakravarthy</h2>
-      <p class="text-lg md:text-xl">Junior Developer</p>
-      <a href="#projects" class="mt-6 inline-block bg-white text-blue-500 px-6 py-2 rounded-lg font-semibold hover:bg-gray-200">
-        View Projects
-      </a>
-    </div>
-  </section>
-  <section>
-    <div class="flex  justify-center">
-      <img src="image/DHANUSH-JAYAKUMAR.jpg" class="w-32 h-32 rounded-full object-cover border-4 border-black-500 mt-5">
+  <section id="home" class="flex flex-col items-center justify-center bg-blue-500 text-white py-16 px-4 text-center">
+    <h2 class="text-3xl md:text-5xl font-bold mb-4">Hi, I'm Dhanush Chakravarthy</h2>
+    <p class="text-lg md:text-xl mb-6">Junior Developer</p>
+    <a href="#projects" class="inline-block bg-white text-blue-500 px-6 py-2 rounded-lg font-semibold hover:bg-gray-200">
+      View Projects
+    </a>
+    <img src="image/DHANUSH-JAYAKUMAR.jpg" class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-black mt-6" alt="Dhanush Photo">
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-16 max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-10">My Projects</h2>
-    
-    <div class="grid md:grid-cols-3 gap-8">
+  <section id="projects" class="py-12 max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">My Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Project Card -->
       <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
         <h3 class="text-xl font-semibold mb-2">Project 1</h3>
-        <p class="text-gray-600 mb-4">Testing of Web Application using Selenium.</p>
+        <p class="text-gray-600">Testing of Web Application using Selenium.</p>
       </div>
-
-      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg">
+      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
         <h3 class="text-xl font-semibold mb-2">Project 2</h3>
-        <p class="text-gray-600 mb-4">Creating a Portfolio Using Tailwind CSS.</p>
+        <p class="text-gray-600">Creating a Portfolio Using Tailwind CSS.</p>
       </div>
-
       <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
         <h3 class="text-xl font-semibold mb-2">Project 3</h3>
-        <p class="text-gray-600 mb-4">Short description of your project.</p>
+        <p class="text-gray-600">Short description of your project.</p>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="bg-white py-16">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6">Certifications</h2>
-      <p class="text-gray-600">
-        <ul>
-          <li>AUTOMATION TESTING USING JAVA AND SELENIUM</li>
-        </ul>
-      </p>
+  <section id="about" class="bg-white py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6">Certifications</h2>
+      <ul class="text-gray-600 list-disc list-inside">
+        <li>AUTOMATION TESTING USING JAVA AND SELENIUM</li>
+      </ul>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 max-w-4xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-10">Contact Me</h2>
-
+  <section id="contact" class="py-12 px-4 max-w-4xl mx-auto">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Contact Me</h2>
     <form class="bg-white p-6 rounded-xl shadow-md space-y-4">
       <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg">
       <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg">
       <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg"></textarea>
-      <button class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">
-        Send Message
-      </button>
+      <button class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 w-full md:w-auto">Send Message</button>
     </form>
   </section>
-  <section class="mb-5">
-    <div class="flex justify-center">
-     <a href="https://facebook.com/"> <img src="image/facebook-logo-vector-icon-logotype-vector-eps_901408-408.avif" alt="" class="h-[30px] w-[40px] pr-5"></a>
-     <a href="https://www.instagram.com/"> <img src="image/OIP (1).webp" alt="" class="w-[40px] h-[30px]"></a>
+
+  <!-- Social Section -->
+  <section class="py-6">
+    <div class="flex justify-center gap-6">
+      <a href="https://facebook.com/">
+        <img src="image/facebook-logo-vector-icon-logotype-vector-eps_901408-408.avif" alt="Facebook" class="h-8 w-8">
+      </a>
+      <a href="https://www.instagram.com/">
+        <img src="image/OIP (1).webp" alt="Instagram" class="h-8 w-8">
+      </a>
     </div>
   </section>
 
