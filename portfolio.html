@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanush Chakravarthy J - Junior Frontend Developer</title>
+    
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            scroll-behavior: smooth;
+            background: #ffffff;
+        }
+        
+        /* Custom Colors */
+        :root {
+            --primary: #1A56DB;
+            --dark-navy: #1E2532;
+            --light-bg: #F8FAFC;
+        }
+        
+        /* Typing Animation */
+        .typing-effect {
+            display: inline-block;
+            overflow: hidden;
+            border-right: 3px solid var(--primary);
+            animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+        }
+        
+        .typing-effect.done {
+            border-right: none;
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        @keyframes blink {
+            0%, 49% {
+                border-right: 3px solid var(--primary);
+            }
+            50%, 100% {
+                border-right: 3px solid transparent;
+            }
+        }
+        
+        /* Floating Shapes */
+        .floating-shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-shape:nth-child(2) {
+            animation-delay: 2s;
+        }
+        
+        .floating-shape:nth-child(3) {
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        /* Fade In Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Smooth Links */
+        a {
+            transition: all 0.3s ease;
+        }
+        
+        /* Navbar Styles */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        /* Project Cards Hover */
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(26, 86, 219, 0.2);
+        }
+        
+        /* Skill Badge */
+        .skill-badge {
+            background: var(--light-bg);
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .skill-badge:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+        
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 16px 24px;
+            background: #10B981;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.3s ease;
+            z-index: 1000;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background: #1445BC;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(26, 86, 219, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 12px 24px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Section Padding */
+        section {
+            padding: 80px 20px;
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav id="navbar" class="sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#home" class="text-2xl font-bold" style="color: var(--primary);">DC</a>
+                
+                <!-- Nav Links (Desktop) -->
+                <div class="hidden md:flex gap-8 items-center">
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 font-medium">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 font-medium">Projects</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-600 font-medium">Experience</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                    <button class="btn-primary" onclick="downloadResume()">Download Resume</button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 flex flex-col gap-4">
+                <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium" onclick="toggleMobileMenu()">About</a>
+                <a href="#skills" class="text-gray-700 hover:text-blue-600 font-medium" onclick="toggleMobileMenu()">Skills</a>
+                <a href="#projects" class="text-gray-700 hover:text-blue-600 font-medium" onclick="toggleMobileMenu()">Projects</a>
+                <a href="#experience" class="text-gray-700 hover:text-blue-600 font-medium" onclick="toggleMobileMenu()">Experience</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium" onclick="toggleMobileMenu()">Contact</a>
+                <button class="btn-primary w-full" onclick="downloadResume()">Download Resume</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);">
+        <!-- Floating Shapes -->
+        <div class="floating-shape absolute top-20 left-10 w-32 h-32 rounded-full" style="background: var(--primary);"></div>
+        <div class="floating-shape absolute bottom-32 right-10 w-40 h-40 rounded-full" style="background: var(--primary);"></div>
+        <div class="floating-shape absolute top-1/2 right-1/4 w-24 h-24 rounded-full" style="background: var(--primary);"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-5xl sm:text-6xl font-bold" style="color: var(--dark-navy);">
+                Hi, I'm Dhanush
+            </h1>
+            <p class="text-2xl sm:text-3xl font-semibold mt-4" style="color: var(--primary);">
+                <span class="typing-effect" id="typing">Junior Frontend Developer</span>
+            </p>
+            <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto leading-relaxed">
+                I craft beautiful, responsive web experiences with clean code and modern technologies.
+            </p>
+            
+            <div class="flex gap-4 mt-8 justify-center flex-wrap">
+                <a href="#projects" class="btn-primary">View My Projects</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16" style="color: var(--dark-navy);">About Me</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Avatar -->
+                <div class="flex justify-center fade-in">
+                    <div class="w-64 h-64 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, var(--primary) 0%, #7B68EE 100%);">
+                        <span class="text-8xl font-bold text-white">DC</span>
+                    </div>
+                </div>
+                
+                <!-- Bio -->
+                <div class="fade-in">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        I'm a junior frontend developer based in Chennai, Tamil Nadu, with a passion for creating responsive, user-friendly web applications. With a background in mathematics and professional experience in finance, I bring analytical thinking and leadership to every project I undertake.
+                    </p>
+                    
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--dark-navy);">What I Bring</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle mt-1" style="color: var(--primary);"></i>
+                            <span class="text-gray-700"><strong>Analytical Thinking:</strong> Strong problem-solving approach rooted in mathematical foundations</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle mt-1" style="color: var(--primary);"></i>
+                            <span class="text-gray-700"><strong>Leadership:</strong> Experience leading teams and coordinating projects</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle mt-1" style="color: var(--primary);"></i>
+                            <span class="text-gray-700"><strong>Clean Code:</strong> Commitment to writing maintainable, semantic HTML and CSS</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16" style="color: var(--dark-navy);">Skills & Technologies</h2>
+            
+            <div class="space-y-12">
+                <!-- Languages -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6" style="color: var(--dark-navy);">Languages</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        <div class="skill-badge text-center">
+                            <i class="fab fa-html5 text-2xl mb-2" style="color: var(--primary);"></i>
+                            <p class="font-semibold text-gray-700">HTML5</p>
+                        </div>
+                        <div class="skill-badge text-center">
+                            <i class="fab fa-css3-alt text-2xl mb-2" style="color: var(--primary);"></i>
+                            <p class="font-semibold text-gray-700">CSS3</p>
+                        </div>
+                        <div class="skill-badge text-center">
+                            <i class="fab fa-js text-2xl mb-2" style="color: var(--primary);"></i>
+                            <p class="font-semibold text-gray-700">JavaScript</p>
+                        </div>
+                        <div class="skill-badge text-center">
+                            <i class="fas fa-code text-2xl mb-2" style="color: var(--primary);"></i>
+                            <p class="font-semibold text-gray-700">ES6+</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frameworks -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6" style="color: var(--dark-navy);">Frameworks & Libraries</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        <div class="skill-badge text-center">
+                            <i class="fab fa-react text-2xl mb-2" style="color: var(--primary);"></i>
+                            <p class="font-semibold text-gray-700">React.js</p>
+                        </div>
+                        <div class="skill-badge text-center">
+                            <i class="fas fa-palette text-2xl mb-2" style="color: var(--primary);"></i>
+                            <p class="font-semibold text-gray-700">Tailwind CSS</p>
+                        </div>
+                        <div class="skill-badge text-center">
+                            <i class="fas fa-route text-2xl mb-2" style="color: var(--primary);"></i>
+                            <p class="font-semibold text-gray-700">React Router</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6" style="color: var(--dark-navy);">Tools & Platforms</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        <div class="skill-badge text-center">
+                            <i class="fab fa-git-alt text-2xl mb-2" style="color: var(--primary);"></i>
+                            <p class="font-semibold text-gray-700">Git</p>
+                        </div>
+                        <div class="skill-badge text-center">
+                            <i class="fab fa-github text-2xl mb-2" style="color: var(--primary);"></i>
+                            <p class="font-semibold text-gray-700">GitHub</p>
+                        </div>
+                        <div class="skill-badge text-center">
+                            <i class="fab fa-npm text-2xl mb-2" style="color: var(--primary);"></i>
+                            <p class="font-semibold text-gray-700">npm</p>
+                        </div>
+                        <div class="skill-badge text-center">
+                            <i class="fas fa-pen-tool text-2xl mb-2" style="color: var(--primary);"></i>
+                            <p class="font-semibold text-gray-700">Figma</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16" style="color: var(--dark-navy);">Featured Projects</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200 fade-in">
+                    <div class="h-40 flex items-center justify-center" style="background: linear-gradient(135deg, var(--primary) 0%, #7B68EE 100%);">
+                        <i class="fas fa-globe text-6xl text-white opacity-20"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--dark-navy);">Personal Portfolio Website</h3>
+                        <p class="text-gray-600 text-sm mb-4">Built a fully responsive portfolio to showcase frontend projects. Implemented smooth animations, mobile-first design, and deployed to GitHub Pages.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs px-3 py-1 rounded-full" style="background: #EFF6FF; color: var(--primary);">React.js</span>
+                            <span class="text-xs px-3 py-1 rounded-full" style="background: #EFF6FF; color: var(--primary);">Tailwind CSS</span>
+                            <span class="text-xs px-3 py-1 rounded-full" style="background: #EFF6FF; color: var(--primary);">GitHub Pages</span>
+                        </div>
+                        <a href="https://github.com/dhanushchakravarthy" target="_blank" class="btn-primary text-sm">
+                            <i class="fab fa-github mr-2"></i> View Code
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200 fade-in">
+                    <div class="h-40 flex items-center justify-center" style="background: linear-gradient(135deg, #10B981 0%, #34D399 100%);">
+                        <i class="fas fa-shopping-cart text-6xl text-white opacity-20"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--dark-navy);">E-Commerce UI (Frontend)</h3>
+                        <p class="text-gray-600 text-sm mb-4">Multi-page e-commerce interface with product listing, cart, and checkout. Used React Router for navigation and useState/useEffect for state management.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs px-3 py-1 rounded-full" style="background: #EFF6FF; color: var(--primary);">React.js</span>
+                            <span class="text-xs px-3 py-1 rounded-full" style="background: #EFF6FF; color: var(--primary);">Tailwind CSS</span>
+                            <span class="text-xs px-3 py-1 rounded-full" style="background: #EFF6FF; color: var(--primary);">React Router</span>
+                        </div>
+                        <a href="https://github.com/dhanushchakravarthy" target="_blank" class="btn-primary text-sm">
+                            <i class="fab fa-github mr-2"></i> View Code
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200 fade-in">
+                    <div class="h-40 flex items-center justify-center" style="background: linear-gradient(135deg, #F59E0B 0%, #FCD34D 100%);">
+                        <i class="fas fa-laptop text-6xl text-white opacity-20"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--dark-navy);">Freelance Client Websites</h3>
+                        <p class="text-gray-600 text-sm mb-4">Responsive websites for small business clients — landing pages, service pages, contact forms — with cross-browser compatibility and WCAG basic compliance.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs px-3 py-1 rounded-full" style="background: #EFF6FF; color: var(--primary);">HTML5</span>
+                            <span class="text-xs px-3 py-1 rounded-full" style="background: #EFF6FF; color: var(--primary);">CSS3</span>
+                            <span class="text-xs px-3 py-1 rounded-full" style="background: #EFF6FF; color: var(--primary);">JavaScript</span>
+                        </div>
+                        <a href="https://github.com/dhanushchakravarthy" target="_blank" class="btn-primary text-sm">
+                            <i class="fab fa-github mr-2"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16" style="color: var(--dark-navy);">Experience & Education</h2>
+            
+            <!-- Experience Timeline -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-8" style="color: var(--dark-navy);">Professional Experience</h3>
+                
+                <div class="space-y-8">
+                    <!-- Job 1 -->
+                    <div class="timeline-item fade-in bg-white p-6 rounded-lg border-l-4" style="border-color: var(--primary);">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                            <div>
+                                <h4 class="text-xl font-bold" style="color: var(--dark-navy);">Branch Team Leader</h4>
+                                <p class="text-gray-600 font-semibold">Shriram Finance Limited</p>
+                            </div>
+                            <span class="text-gray-500 text-sm mt-2 md:mt-0">June 2024 – Present</span>
+                        </div>
+                        <ul class="text-gray-700 space-y-2 mt-4">
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 mt-1">•</span>
+                                <span>Led a branch team of 8+, improving team workflows and productivity</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 mt-1">•</span>
+                                <span>Prepared audit reports with meticulous attention to detail</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 mt-1">•</span>
+                                <span>Managed day-to-day operations and strategic initiatives</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Job 2 -->
+                    <div class="timeline-item fade-in bg-white p-6 rounded-lg border-l-4" style="border-color: var(--primary);">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                            <div>
+                                <h4 class="text-xl font-bold" style="color: var(--dark-navy);">Cashier</h4>
+                                <p class="text-gray-600 font-semibold">Shriram Finance Limited</p>
+                            </div>
+                            <span class="text-gray-500 text-sm mt-2 md:mt-0">June 2023 – June 2024</span>
+                        </div>
+                        <ul class="text-gray-700 space-y-2 mt-4">
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 mt-1">•</span>
+                                <span>Handled high-volume cash transactions with 100% accuracy</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 mt-1">•</span>
+                                <span>Resolved customer queries with professionalism and empathy</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 mt-1">•</span>
+                                <span>Maintained compliance with financial procedures and regulations</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div>
+                <h3 class="text-2xl font-bold mb-8" style="color: var(--dark-navy);">Education</h3>
+                
+                <div class="fade-in bg-white p-6 rounded-lg border-l-4" style="border-color: var(--primary);">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                        <div>
+                            <h4 class="text-xl font-bold" style="color: var(--dark-navy);">MSc Mathematics</h4>
+                            <p class="text-gray-600 font-semibold">Government Arts and Science College, Krishnagiri</p>
+                        </div>
+                        <span class="text-gray-500 text-sm mt-2 md:mt-0">2020 – 2022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4" style="color: var(--dark-navy);">Let's Connect</h2>
+            <p class="text-center text-gray-600 text-lg mb-12">Feel free to reach out to me through any of these channels or fill the form below.</p>
+            
+            <!-- Contact Info -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12 fade-in">
+                <!-- Email -->
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-lg mb-4" style="background: #EFF6FF;">
+                        <i class="fas fa-envelope text-2xl" style="color: var(--primary);"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Email</h4>
+                    <a href="mailto:dhanushchakravarthy18@gmail.com" class="text-gray-600 hover:text-blue-600">
+                        dhanushchakravarthy18@gmail.com
+                    </a>
+                </div>
+                
+                <!-- Phone -->
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-lg mb-4" style="background: #EFF6FF;">
+                        <i class="fas fa-phone text-2xl" style="color: var(--primary);"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Phone</h4>
+                    <a href="tel:+919444667411" class="text-gray-600 hover:text-blue-600">
+                        +91 9444667411
+                    </a>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-lg mb-4" style="background: #EFF6FF;">
+                        <i class="fab fa-github text-2xl" style="color: var(--primary);"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">GitHub</h4>
+                    <a href="https://github.com/dhanushchakravarthy" target="_blank" class="text-gray-600 hover:text-blue-600">
+                        dhanushchakravarthy
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="bg-gray-50 p-8 rounded-lg fade-in">
+                <h3 class="text-2xl font-bold mb-6" style="color: var(--dark-navy);">Send Me a Message</h3>
+                <form id="contact-form" class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Name</label>
+                            <input type="text" id="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="focus-ring-color: var(--primary);">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" id="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="focus-ring-color: var(--primary);">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Message</label>
+                        <textarea id="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="focus-ring-color: var(--primary);"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full py-3 font-semibold">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="mb-2">Built by <span class="font-bold">Dhanush Chakravarthy J</span></p>
+            <p class="text-gray-400">© <span id="year"></span> All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ==================== UTILITY FUNCTIONS ====================
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // ==================== TYPING ANIMATION ====================
+        
+        const typingElement = document.getElementById('typing');
+        const roles = [
+            'Junior Frontend Developer',
+            'React Enthusiast',
+            'UI/UX Focused Developer',
+            'Clean Code Advocate'
+        ];
+        let roleIndex = 0;
+        
+        function typeRole() {
+            const role = roles[roleIndex];
+            let charIndex = 0;
+            
+            typingElement.textContent = '';
+            typingElement.classList.remove('done');
+            
+            function type() {
+                if (charIndex < role.length) {
+                    typingElement.textContent += role[charIndex];
+                    charIndex++;
+                    setTimeout(type, 50);
+                } else {
+                    typingElement.classList.add('done');
+                    setTimeout(() => {
+                        roleIndex = (roleIndex + 1) % roles.length;
+                        setTimeout(typeRole, 2000);
+                    }, 3000);
+                }
+            }
+            
+            type();
+        }
+        
+        // Start typing animation when page loads
+        window.addEventListener('load', typeRole);
+        
+        // ==================== SCROLL ANIMATIONS ====================
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // ==================== MOBILE MENU TOGGLE ====================
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // ==================== CONTACT FORM ====================
+        
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                // Show success toast
+                showToast(`Thank you ${name}! Your message has been sent. I'll get back to you soon!`);
+                
+                // Reset form
+                this.reset();
+            }
+        });
+        
+        // ==================== TOAST NOTIFICATION ====================
+        
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+        
+        // ==================== DOWNLOAD RESUME ====================
+        
+        function downloadResume() {
+            // This is a placeholder function. Replace with actual resume download.
+            alert('Resume download feature will be available soon. For now, please contact me via email.');
+        }
+    </script>
+</body>
+</html>
